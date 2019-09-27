@@ -1,0 +1,32 @@
+{
+  "name": "eatdaburger",
+  "version": "1.0.0",
+  "description": "A burger logger with MySQL, Node, Express, Handlebars and an ORM",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpeedHunterSam/EatDaBurger.git"
+  },
+  "keywords": [
+    "MySQL",
+    "NODE",
+    "EXPRESS",
+    "HANDLEBARS",
+    "ORM"
+  ],
+  "author": "SpeedHunterSam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SpeedHunterSam/EatDaBurger/issues"
+  },
+  "homepage": "https://github.com/SpeedHunterSam/EatDaBurger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1"
+  }
+}
