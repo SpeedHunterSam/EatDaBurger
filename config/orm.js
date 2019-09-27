@@ -9,17 +9,18 @@ const connection = require("../config/connection.js");
 const orm = {
       //view all burgers in datab
     selectAll: function (tableInput, cb){
-        const queryString = `SELECT * FROM ??`;
+        const queryString = `SELECT * FROM burgers`
         connection.query(queryString, [tableInput], function(err, result) {
             if (err) throw err;
             cb(result);
+            
           });
 
     }, //INSERT a new burger into database
     insertOne: function (tableInput, column, value){
         //const queryString = `INSERT INTO ?? (??) VALUES ("?");`;
 
-        const queryString = `INSERT INTO` + tableInput + `(` + name + `) VALUES ("` + value + `");`;
+        const queryString = `INSERT INTO ` + tableInput + `(` + column + `) VALUES ("` + value + `");`;
 
         console.log(queryString);
         connection.query(queryString, [tableInput, column, value],function(err, result) { 
