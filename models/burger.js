@@ -7,9 +7,8 @@ const burger = {
         cb(res);
       });
     },
-    // The variables cols and vals are arrays.
-    create: function(cols, vals, cb) {
-      orm.insertOne("burgers", cols, vals, function(res) {
+    create: function(column, value, cb) {
+      orm.insertOne("burgers", column, value, function(res) {
         cb(res);
       });
     },
