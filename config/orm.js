@@ -8,11 +8,11 @@ const connection = require("../config/connection.js");
 // https://en.wikipedia.org/wiki/SQL_injection
 const orm = {
       //view all burgers in datab
-    selectAll: function (tableInput){
+    selectAll: function (tableInput, cb){
         const queryString = `SELECT * FROM ??`;
         connection.query(queryString, [tableInput], function(err, result) {
             if (err) throw err;
-            console.log(result);
+            cb(result);
           });
 
     }, //INSERT a new burger into database

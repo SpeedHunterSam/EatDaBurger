@@ -8,6 +8,8 @@ const burger = require("../models/burger.js");
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
 
+    res.render("index");
+
 burger.all();
 
 });
@@ -26,6 +28,7 @@ router.post("/api/burger", function(req, res) {
 router.put("/api/burger/:id", function(req, res) {
 
     burger.update();
+
 //update burger status..has it been devoured
 
 
