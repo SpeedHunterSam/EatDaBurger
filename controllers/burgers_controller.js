@@ -17,20 +17,12 @@ router.get("/", function(req, res) {
          res.render("index", hbsObject);
      })
 
-/*
-    burger.all(function (data) {
-        console.log(data)
-        res.json(data)
-    });
-    */
-
 });
 
-router.post("/api/burger", function(req, res) {
+router.post("/burger", function(req, res) {
 
-    // req.body.name
  
-    burger.create("name", "test burger", function(result){
+    burger.create("name", req.body.newBurgerName, function(result){
 
         res.json(result);
     });
