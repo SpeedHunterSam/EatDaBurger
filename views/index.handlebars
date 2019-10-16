@@ -11,12 +11,12 @@
  
   {{#each burger}}
   <hr/>
-    <li>
+  
       <p>Burger Name: {{name}}</p>
       <p>Has burger been devoured? {{devoured}}</p>
-      <form action="/burger/{{this.id}} method="PUT">
-                <button type="submit" > Devour</button>
-    </li>
+      <form action="/burger/{{this.id}}" method="PUT">
+                <button type="submit" > Devour</button></form>
+    
     <hr/>
   {{/each}}
 </ul>

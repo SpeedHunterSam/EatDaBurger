@@ -30,14 +30,10 @@ router.post("/burger", function(req, res) {
 
 });
 
-router.put("/burger/:id", function(req, res) {
+router.get("/burger/:id", function(req, res) {
 
     console.log(req.params.id);
-    burger.update("id", req.params.id);
-    console.log(res);
-
-//update burger status..has it been devoured
-
+    burger.update(req.params.id);
 
 });
 
