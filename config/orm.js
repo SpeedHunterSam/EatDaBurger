@@ -26,7 +26,7 @@ const orm = {
         connection.query(queryString, [tableInput, column, value],function(err, result) { 
 
 
-        //connection.query(queryString, [tableInput, column, value], function(err, result) {
+
             if (err) throw err;
             console.log(result);
           });
@@ -34,13 +34,8 @@ const orm = {
     },
     //update burger to eaten
     updateOne: function (tableInput, condition){
-        //const queryString = `SELECT * FROM ??`;
 
-        //UPDATE `burgers_db`.`burgers` SET `devoured` = '1' WHERE (`id` = '1');
        const queryString = `UPDATE ` + tableInput + ` SET devoured = 1 WHERE (id = ` + condition + `);`; 
-
-      // UPDATE `burgers_db`.`burgers` SET `devoured` = '1' WHERE (`id` = '1');
-
 
         connection.query(queryString, [tableInput], function(err, result) {
             if (err) throw err;
