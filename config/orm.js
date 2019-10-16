@@ -33,8 +33,13 @@ const orm = {
 
     },
     //update burger to eaten
-    updateOne: function (tableInput){
-        const queryString = `SELECT * FROM ??`;
+    updateOne: function (tableInput, ){
+        //const queryString = `SELECT * FROM ??`;
+
+        //UPDATE `burgers_db`.`burgers` SET `devoured` = '1' WHERE (`id` = '1');
+       const queryString = `UPDATE "burgers" SET "devoured" = '1' WHERE ("id" = '1');`; 
+
+
         connection.query(queryString, [tableInput], function(err, result) {
             if (err) throw err;
             console.log(result);
@@ -45,8 +50,3 @@ const orm = {
   
   module.exports = orm;
   
-/*
-* `selectAll()`
-* `insertOne()`
-* `updateOne()`
-*/

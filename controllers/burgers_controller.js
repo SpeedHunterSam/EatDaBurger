@@ -27,13 +27,14 @@ router.post("/burger", function(req, res) {
         res.json(result);
     });
 
-    //having trouble adding a burger here
 
 });
 
-router.put("/api/burger/:id", function(req, res) {
+router.put("/burger/:id", function(req, res) {
 
-    burger.update();
+    console.log(req.params.id);
+    burger.update("id", req.params.id);
+    console.log(res);
 
 //update burger status..has it been devoured
 
