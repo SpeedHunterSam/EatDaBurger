@@ -1,23 +1,39 @@
- <h2>Add A Burger</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <!-- Burgers not devoured -->
+      {{#each burger}}
+      {{#unless this.devoured}}
 
 
-    <form action="/burger" method="POST">
-      <input type="text" id="name" name="newBurgerName">
-      <button type="submit" >Add Burger</button>
-    </form>
+      <p>Would you like to devour "{{name}}"?</p>
+      <form action="/burger/{{this.id}}" method="PUT">
+        <button type="submit"> Devour </button></form>
+      <hr />
+      {{/unless}}
+      {{/each}}
+
+
+    </div>
+    <div class="col-sm">
+      <!-- add burgers -->
+      <h2>Add A Burger</h2>
+
+
+      <form action="/burger" method="POST">
+        <input type="text" id="name" name="newBurgerName">
+        <button type="submit">Add Burger</button>
+      </form>
+    </div>
+    <div class="col-sm">
+      {{#each burger}}
+      {{#if this.devoured}}
+
+
+      <p>Burger "{{name}}" has been devoured</p>
+      <hr />
+      {{/if}}
+      {{/each}}
+    </div>
   </div>
 </div>
- 
- 
-  {{#each burger}}
-  <hr/>
-  
-      <p>Burger Name: {{name}}</p>
-      <p>Has burger been devoured? {{devoured}}</p>
-      <form action="/burger/{{this.id}}" method="PUT">
-                <button type="submit" > Devour</button></form>
-    
-    <hr/>
-  {{/each}}
-</ul>
-
