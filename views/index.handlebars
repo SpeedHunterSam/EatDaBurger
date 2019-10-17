@@ -1,3 +1,9 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Eat Da Burger</h1>
+    <p class="lead">Welcome to Good Burger, home of the Good Burger, can I take your order?</p>
+  </div>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-sm">
@@ -6,9 +12,12 @@
       {{#unless this.devoured}}
 
 
-      <p>Would you like to devour "{{name}}"?</p>
+      <p><b>{{name}}</b><br/>
+      <small class="text-muted">Would you like to eat this Good Burger?</small>
+      <br/>
+      </p>
       <form action="/burger/{{this.id}}" method="PUT">
-        <button type="submit"> Devour </button></form>
+        <button type="submit" type="button" class="btn btn-success"> Devour </button></form>
       <hr />
       {{/unless}}
       {{/each}}
@@ -17,12 +26,14 @@
     </div>
     <div class="col-sm">
       <!-- add burgers -->
-      <h2>Add A Burger</h2>
+
+      <h2>Add a Burger</h2>
 
 
       <form action="/burger" method="POST">
-        <input type="text" id="name" name="newBurgerName">
-        <button type="submit">Add Burger</button>
+        <input type="text" class="form-control" id="name" name="newBurgerName">
+        <br/>
+        <button type="submit" class="btn btn-warning">Add Burger</button>
       </form>
     </div>
     <div class="col-sm">
@@ -30,7 +41,7 @@
       {{#if this.devoured}}
 
 
-      <p>Burger "{{name}}" has been devoured</p>
+      <p><b>{{name}}</b><small class="text-muted"> has been devoured</small></p>
       <hr />
       {{/if}}
       {{/each}}
