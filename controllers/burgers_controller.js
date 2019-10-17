@@ -15,6 +15,7 @@ router.get("/", function(req, res) {
          }
          console.log(data);
          res.render("index", hbsObject);
+        
      })
 
 });
@@ -25,8 +26,9 @@ router.post("/burger", function(req, res) {
     burger.create("name", req.body.newBurgerName, function(result){
 
         res.json(result);
+        
     });
-
+    res.redirect("/");
 
 });
 
@@ -34,6 +36,7 @@ router.get("/burger/:id", function(req, res) {
 
     console.log(req.params.id);
     burger.update(req.params.id);
+    res.redirect("/");
 
 });
 
